@@ -1,6 +1,6 @@
 const express = require('express');
 const { createUser } = require('../Controllers/UsersController');
-const { validateRole, validateToken, encryptPassword } = require('../middlewares/AuthMiddleware');
+const { validateRole, validateToken, encryptPassword } = require('../Middlewares/AuthMiddleware');
 
 const userRoutes = express.Router();
 

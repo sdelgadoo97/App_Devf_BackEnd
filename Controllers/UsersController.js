@@ -1,4 +1,4 @@
-const UserModel = require("../models/User");
+const UserModel = require("../Models/User");
 
 const createUser = async (request, response) => {
   const { email, role } = request.body;
