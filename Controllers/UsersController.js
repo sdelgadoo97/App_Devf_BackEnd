@@ -1,5 +1,6 @@
 const UserModel = require("../models/User");
 
+
 const createUser = async (request, response) => {
   const { email, role } = request.body;
   const { encryptedPassword } = request;
