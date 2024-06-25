@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema(
     doc_id: {
       type: Number,
       required: true,
-      unique: true,
+      enum: ['CC','TI','CE','NIT'],
     },
     tipo_id: {
       type: String,
@@ -37,6 +37,7 @@ const userSchema = new mongoose.Schema(
     },
     patient_gender: {
       type: String,
+      enum: ["male", "female"],
       required: true,
     },
     patient_height: {
@@ -54,6 +55,8 @@ const userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+userSchema.index({ doc_id: 1, tipo_id: 1 }, { unique: true });
 
 const User = mongoose.model("patients", userSchema);
 
