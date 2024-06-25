@@ -5,10 +5,10 @@ const userSchema = new mongoose.Schema(
     doc_id: {
       type: Number,
       required: true,
-      enum: ['CC','TI','CE','NIT'],
     },
     tipo_id: {
       type: String,
+      enum: ['CC','TI','CE','NIT'],
       required: true,
     },
     patient_name: {
@@ -25,13 +25,13 @@ const userSchema = new mongoose.Schema(
     },
     patient_email: {
       type: String,
-      required: true,
+      required: false,
     },
     patient_birthdate: {
       type: Date,
       required: true,
     },
-    patiend_age: {
+    patient_age: {
       type: Number,
       required: true,
     },
@@ -42,15 +42,15 @@ const userSchema = new mongoose.Schema(
     },
     patient_height: {
       type: Number,
-      required: true,
+      required: false,
     },
     patient_weight: {
       type: Number,
-      required: true,
+      required: false,
     },
     patient_allergies: {
       type: String,
-      required: true,
+      required: false,
     }
   },
   { timestamps: true }

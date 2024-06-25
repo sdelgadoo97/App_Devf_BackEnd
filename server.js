@@ -5,6 +5,7 @@ const db = require('./Config/database');
 
 const usersRoutes = require('./Routes/UsersRoutes');
 const authRoutes = require('./Routes/AuthRoutes');
+const patientsRoutes = require('./Routes/PatientsRoutes');
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.get('/', (request, response) => {
 
 app.use('/api/v1', usersRoutes);
 app.use('/api/v1', authRoutes);
+app.use('/api/v1', patientsRoutes);
 
 db.connect();
 
