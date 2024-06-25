@@ -52,7 +52,7 @@ const updatePatient = async (request, response) => {
   const { id } = request.params;
   const patientData = request.body;
   try {
-    const result = await PatientsCatalog.findByIdAndUpdate(id, patientData, {
+    const result = await PatientsCatalog.findByIdAndUpdate(doc_id, patientData, {
       new: true
     });
     response.status(200).send({
@@ -71,7 +71,7 @@ const updatePatient = async (request, response) => {
 const deletePatient = async (request, response) => {
   const { id } = request.params;
   try {
-    const result = await PatientsCatalog.findByIdAndDelete(id);
+    const result = await PatientsCatalog.findByIdAndDelete(doc_id);
     response.status(200).send({
       success: true,
       data: result
